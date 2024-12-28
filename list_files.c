@@ -1,4 +1,6 @@
-﻿#include <stdio.h>
+﻿#include "list_files.h"
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
@@ -16,7 +18,7 @@ const char* remove_starting_path(const char* full_path, const char* base_path) {
     return full_path; // Return original path if base path not found
 }
 
-char **recurse_get_file_list(const char* base_path, const char *path, int *file_count) {
+const char **recurse_get_file_list(const char* base_path, const char *path, int *file_count) {
     struct dirent *entry;
 
     DIR *dp = opendir(path);
@@ -25,7 +27,7 @@ char **recurse_get_file_list(const char* base_path, const char *path, int *file_
         return NULL;
     }
 
-    char **files = NULL; // Dynamically allocated list of file paths
+    const char **files = NULL; // Dynamically allocated list of file paths
     *file_count = 0;     // Initialize file count
 
     while ((entry = readdir(dp))) {
@@ -45,7 +47,7 @@ char **recurse_get_file_list(const char* base_path, const char *path, int *file_
         if (S_ISDIR(path_stat.st_mode)) {
             // If it's a directory, recursively call list_files
             int subfile_count = 0;
-            char **subfiles = recurse_get_file_list(base_path, full_path, &subfile_count);
+            const char **subfiles = recurse_get_file_list(base_path, full_path, &subfile_count);
 
             if (subfiles != NULL) {
                 // Append subdirectory files to the main list
@@ -69,21 +71,22 @@ char **recurse_get_file_list(const char* base_path, const char *path, int *file_
     return files;
 }
 
-char **get_file_list(const char *path, int *file_count) {
-    char original_dir[PATH_MAX];
+struct FileList *getFileList(const char *path) {
+    int file_count = 0;
+    const char **results = recurse_get_file_list(path, path, &file_count);
 
-    char **results = recurse_get_file_list(path, path, file_count);
-
-
-    return results;
+    struct FileList *file_list = malloc(sizeof(struct FileList));
+    file_list->files = results == NULL ? malloc(sizeof (char *)) : results;
+    file_list->files_count = file_count;
+    return file_list;
 }
 
 
-
 // Function to free the list of file paths
-void free_file_list(char **files, int file_count) {
-    for (int i = 0; i < file_count; ++i) {
-        free(files[i]);
+void freeFileList(struct FileList *list) {
+    for (int i = 0; i < list->files_count; ++i) {
+        free((char *)list->files[i]);
     }
-    free(files);
+    free(list->files);
+    free(list);
 }

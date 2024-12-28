@@ -4,8 +4,13 @@
 extern "C" {
 #endif
 
-extern char **get_file_list(const char *path, int *file_count);
-extern void free_file_list(char **files, int file_count);
+struct FileList {
+    const char **files;
+    int files_count;
+};
+
+extern struct FileList *getFileList(const char *path);
+extern void freeFileList(struct FileList *list);
 
 #ifdef __cplusplus
 }
