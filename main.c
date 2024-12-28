@@ -1,7 +1,7 @@
 ﻿#include "adflib/lib/adflib.h"
 #include "arguments.h"
 
-int main(int argc, char *argv[]) {
+int main(const int argc, const char *argv[]) {
     BOOL quad;
     const struct Arguments* args = parseArguments(argc, argv);
 

@@ -15,7 +15,7 @@ void printHelp() {
                  );
 }
 
-void *freeArguments(struct Arguments *args) {
+void freeArguments(struct Arguments *args) {
     if ( args ) {
         if ( args->exclusions ) {
             for ( int i=0; i<args->exclusion_count; i++ ) {
