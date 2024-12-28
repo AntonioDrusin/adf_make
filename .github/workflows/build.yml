@@ -1,0 +1,23 @@
+﻿name: Windows Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v2
+
+      - name: Configure CMake (Release)
+        run: cmake -B build -G "Ninja"
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Run Tests
+        run: ctest --test-dir build --verbose

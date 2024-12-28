@@ -1,0 +1,7 @@
+unADF v0.5 : a unzip like for .ADF files, powered by ADFlib (v0.7.8 - 23 may 1999)
+unadf [-lrcs -v n] dumpname.adf
+    -l : lists root directory contents
+    -r : lists directory tree contents
+    -c : use dircache data (must be used with -l)
+    -s : display entries logical block pointer (must be used with -l)
+    -v n : mount volume #n instead of default #0 volume

@@ -1,0 +1,50 @@
+26MAY99
+- 0.7.8a released.
+- a minor buf was detected in the bootblock checksum checking
+24MAY99
+- 0.7.8 released. the 0.7.9 will have some links support. the next unadf version will have extraction (-x).
+- Win32 dynamic library makefile added
+- test scripts floppy.sh and bigdev.sh added
+- small bug fix in adfGetRDirEnt().
+20MAY99
+- the ENV_DECLARATION is put in the library (adf_env.c), and must be removed from the main() files.
+  Will be consistent will the .dll version.
+- unadf.c started : a unzip like utility for the .ADF files. Extraction not provided yet.
+- adfGetRDirEnt() added, adfFreeDirList() modified : to get recursively the entire directories entries tree.
+13MAY99
+- adfSetEntryAccess() and adfSetEntryComment() added
+- Win32 makefile added for the static library form
+06MAY99
+- adfGetVersionNumber() and adfGetVersionDate() added
+01MAY99
+- many date and time fields filled 
+- bug fix in adfCreateDir()
+- adfRenameEntry() already worked with two differents dirs, but it's verified now
+29APR
+- Hardfile support added (requested by Dan Sutherland)
+19APR
+- bug fix in cache routines
+- adfRenameEntry() works in the same directory, only
+6APR99
+- bug fix in adfWriteBootBlock() : disks can really be made bootable
+- bug fix around adfCreateDumpDevice()
+22MAR99
+- removed the fread() bug : fopen(,"rb")
+- removed the LSEG checking
+01FEB99
+- adfFlushFile()
+- dir cache support for files and directories
+- bugfix : adfCloseFile() when filesize==0
+- bugfix : parent field in file header block
+28JAN99
+- safier and proper error handling
+27JAN99
+- bugfix : adfGetFreeBlocks(), physical and logical block numbers confused
+24JAN99
+- adfRemoveEntry() : delete files and empty directories
+- modified Makefile : remplace links for Linux/ and
+  adf_nativ.h with gcc flags -I. -I..
+19JAN99
+- Remove most of signed/unsigned warning from MSVC
+- Error handling : test exe
+- Read only support
