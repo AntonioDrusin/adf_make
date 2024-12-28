@@ -19,7 +19,7 @@ void freeArguments(struct Arguments *args) {
     if ( args ) {
         if ( args->exclusions ) {
             for ( int i=0; i<args->exclusion_count; i++ ) {
-                free(args->exclusions[i]);
+                free((void *)args->exclusions[i]);
             }
             free(args->exclusions);
         }

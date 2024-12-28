@@ -26,8 +26,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         shell: bash
         run: |
-          # Extract the annotation message from the tag
-          TAG_MESSAGE=$(git for-each-ref refs/tags/${{ github.ref_name }} --format='%(contents)')
+          TAG_MESSAGE=$(git tag -l --format='%(contents)' "${{ github.ref_name }}")
           echo "TAG_MESSAGE<<EOF" >> $GITHUB_ENV
           echo "${TAG_MESSAGE}" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV

@@ -6,7 +6,7 @@ struct Arguments {
     const char *error_message;
     const char *dst_adf;
     const char *src_folder;
-    char **exclusions;
+    const char **exclusions;
     int exclusion_count;
 };
 
