@@ -1,9 +1,17 @@
 ﻿#include "adflib/lib/adflib.h"
 #include "arguments.h"
+#include "list_files.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <dirent.h>
+#include <sys/stat.h>
+
+
 
 int main(const int argc, const char *argv[]) {
     BOOL quad;
-    const struct Arguments* args = parseArguments(argc, argv);
+    const struct Arguments* args = getArguments(argc, argv);
 
     // printf ("mounting the ADF");
     // adfEnvInitDefault();
@@ -28,6 +36,9 @@ int main(const int argc, const char *argv[]) {
     //     }
     //     adfUnMountDev(device);
     // }
+
+    //list_files(args->src_folder);
+
     int count = args->exclusion_count;
     freeArguments(args);
     return count;

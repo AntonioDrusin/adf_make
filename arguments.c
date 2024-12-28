@@ -15,15 +15,12 @@ void printHelp() {
                  );
 }
 
-void freeArguments(struct Arguments *args) {
+void freeArguments(const struct Arguments *args) {
     if ( args ) {
         if ( args->exclusions ) {
-            for ( int i=0; i<args->exclusion_count; i++ ) {
-                free((void *)args->exclusions[i]);
-            }
             free(args->exclusions);
         }
-        free(args);
+        free((void *)args);
     }
 }
 
@@ -32,7 +29,7 @@ void printError(const char *error) {
     printHelp();
 }
 
-const struct Arguments *parseArguments(const int argc, const char *argv[]) {
+const struct Arguments *getArguments(const int argc, const char *argv[]) {
     struct Arguments *args = malloc(sizeof(struct Arguments));
     if (!args) {
         perror("malloc failed");
@@ -51,9 +48,11 @@ const struct Arguments *parseArguments(const int argc, const char *argv[]) {
     // Initialize c_values
     int x_count = 0;
 
+    // DRY in the for loop will also DRY the unit tests. But that is a future refactor.
+
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-x") == 0) {
-            if (i + 1 < argc && strchr(argv[i + 1], '=') != NULL) {
+            if (i + 1 < argc && argv[i + 1][0] != '-') {
                 x_count += 1;
                 ++i;
             } else {
@@ -61,7 +60,7 @@ const struct Arguments *parseArguments(const int argc, const char *argv[]) {
                 return args;
             }
         } else if (strcmp(argv[i], "-d") == 0) {
-            if (i + 1 < argc) {
+            if (i + 1 < argc && argv[i+1][0] != '-') {
                 if (args->dst_adf) {
                     args->error_message = "Error: -d can only appear once.\n";
                     return args;
@@ -72,7 +71,7 @@ const struct Arguments *parseArguments(const int argc, const char *argv[]) {
                 return args;
             }
         } else if (strcmp(argv[i], "-s") == 0) {
-            if (i + 1 < argc) {
+            if (i + 1 < argc && argv[i+1][0] != '-') {
                 if (args->src_folder) {
                     args->error_message = "Error: -s can only appear once.\n";
                     return args;
@@ -102,8 +101,8 @@ const struct Arguments *parseArguments(const int argc, const char *argv[]) {
 
     int c=0;
     for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-c") == 0) {
-            if (i + 1 < argc && strchr(argv[i + 1], '=') != NULL) {
+        if (strcmp(argv[i], "-x") == 0) {
+            if (i + 1 < argc) {
                 args->exclusions[c++] = argv[i+1];
             } else {
                 return args;
