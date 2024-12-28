@@ -1,6 +1,9 @@
 ﻿cmake_minimum_required(VERSION 3.30)
 project(adf_make)
 
+enable_testing()
+include(CTest)
+
 set(CMAKE_CXX_STANDARD 98)
 
 include_directories(${CMAKE_SOURCE_DIR}/adflib/Lib/Win32)
