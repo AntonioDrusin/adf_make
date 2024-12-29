@@ -6,8 +6,6 @@ struct Arguments {
     const char *error_message;
     const char *dst_adf;
     const char *src_folder;
-    const char **exclusions;
-    int exclusion_count;
 };
 
 #ifdef __cplusplus

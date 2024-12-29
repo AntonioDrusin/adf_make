@@ -1,0 +1,5 @@
+if(EXISTS "D:/dev/Amiga/adf-make/cmake-build-release/google_tests/adf_tests[1]_tests.cmake")
+  include("D:/dev/Amiga/adf-make/cmake-build-release/google_tests/adf_tests[1]_tests.cmake")
+else()
+  add_test(adf_tests_NOT_BUILT adf_tests_NOT_BUILT)
+endif()

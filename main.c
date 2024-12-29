@@ -39,8 +39,7 @@ int main(const int argc, const char *argv[]) {
 
     //list_files(args->src_folder);
 
-    int count = args->exclusion_count;
     freeArguments(args);
-    return count;
+    return 0;
 }
 

@@ -1,0 +1,21 @@
+# ninja log v6
+1051	1083	7571838232496826	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	5408234695ef42e6
+2	37	7571838222029547	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	20c61d7c48f61f17
+958	989	7571838231551846	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	b944babae9dd20e5
+2	37	7571838222029547	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	20c61d7c48f61f17
+37	958	7571838231241833	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	1e8fa6dc4882cccd
+37	958	7571838231241833	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	1e8fa6dc4882cccd
+990	1020	7571838231866822	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	be368df8893c893
+990	1020	7571838231866822	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	be368df8893c893
+958	989	7571838231551846	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	b944babae9dd20e5
+1144	1185	7571838233511948	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	fda08d0de7e14967
+1020	1051	7571838232176823	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	ba55949951c257b5
+1144	1185	7571838233511948	CMakeFiles/googletest-populate-complete	fda08d0de7e14967
+1020	1051	7571838232176823	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	ba55949951c257b5
+1051	1083	7571838232496826	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	5408234695ef42e6
+1114	1144	7571838233101917	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	e612832555489f7f
+1084	1114	7571838232801918	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	e3b78c1d474cda12
+1084	1114	7571838232801918	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	e3b78c1d474cda12
+1114	1144	7571838233101917	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	e612832555489f7f
+1144	1185	7571838233511948	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	fda08d0de7e14967
+1144	1185	7571838233511948	D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	fda08d0de7e14967

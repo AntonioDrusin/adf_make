@@ -74,36 +74,5 @@ TEST(ParseArgumentsTest, AllRequiredArguments_AreReturned) {
     EXPECT_FALSE(args->error);
     EXPECT_EQ("some.adf", args->dst_adf);
     EXPECT_EQ("c:\\source", args->src_folder);
-    EXPECT_EQ(0, args->exclusion_count);
-    freeArguments(args);
-}
-
-TEST(ParseArgumentsTest, Exclusions_AreReturned) {
-    const char *argv[] = {"program", "-x", "exc2", "-s", "c:\\source", "-d", "some.adf", "-x", "exc1"};
-    const Arguments* args = getArguments(std::ssize(argv), argv);
-
-    EXPECT_FALSE(args->error);
-
-    EXPECT_EQ(2, args->exclusion_count);
-    EXPECT_EQ("exc2", args->exclusions[0]);
-    EXPECT_EQ("exc1", args->exclusions[1]);
-    freeArguments(args);
-}
-
-TEST(ParseArgumentsTest, MissingExclusionValueEarly_ErrorsOut) {
-    const char *argv[] = {"program", "-x", "-s", "c:\\source", "-d", "some.adf", "-x", "exc1"};
-    const Arguments* args = getArguments(std::ssize(argv), argv);
-
-    EXPECT_TRUE(args->error);
-    EXPECT_THAT(args->error_message, testing::HasSubstr("-x requires"));
-    freeArguments(args);
-}
-
-TEST(ParseArgumentsTest, MissingExclusionValueAtEnd_ErrorsOut) {
-    const char *argv[] = {"program", "-x", "exc2", "-s", "c:\\source", "-d", "some.adf", "-x"};
-    const Arguments* args = getArguments(std::ssize(argv), argv);
-
-    EXPECT_TRUE(args->error);
-    EXPECT_THAT(args->error_message, testing::HasSubstr("-x requires"));
     freeArguments(args);
 }

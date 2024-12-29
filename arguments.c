@@ -17,9 +17,6 @@ void printHelp() {
 
 void freeArguments(const struct Arguments *args) {
     if ( args ) {
-        if ( args->exclusions ) {
-            free(args->exclusions);
-        }
         free((void *)args);
     }
 }
@@ -37,8 +34,6 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
     }
 
     args->error = 0;
-    args->exclusions = NULL;
-    args->exclusion_count = 0;
     args->dst_adf = NULL;
     args->src_folder = NULL;
     args->error_message = NULL;
@@ -51,15 +46,7 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
     // DRY in the for loop will also DRY the unit tests. But that is a future refactor.
 
     for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-x") == 0) {
-            if (i + 1 < argc && argv[i + 1][0] != '-') {
-                x_count += 1;
-                ++i;
-            } else {
-                args->error_message = "Error: -x requires an argument <source file>\n";
-                return args;
-            }
-        } else if (strcmp(argv[i], "-d") == 0) {
+        if (strcmp(argv[i], "-d") == 0) {
             if (i + 1 < argc && argv[i+1][0] != '-') {
                 if (args->dst_adf) {
                     args->error_message = "Error: -d can only appear once.\n";
@@ -97,19 +84,6 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
         return args;
     }
 
-    args->exclusions = malloc(sizeof(char *) * x_count);
-
-    int c=0;
-    for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-x") == 0) {
-            if (i + 1 < argc) {
-                args->exclusions[c++] = argv[i+1];
-            } else {
-                return args;
-            }
-        }
-    }
-    args->exclusion_count = x_count;
 
     args->error = false;
 
