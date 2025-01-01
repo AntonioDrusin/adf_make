@@ -130,25 +130,25 @@ void adfEnvCleanUp()
  * adfChgEnvProp
  *
  */
-void adfChgEnvProp(int prop, void *new)
+void adfChgEnvProp(int prop, void *newProp)
 {
 	BOOL *newBool;
 
     switch(prop) {
     case PR_VFCT:
-        adfEnv.vFct = (void(*)(char*))new;
+        adfEnv.vFct = (void(*)(char*))newProp;
         break;
     case PR_WFCT:
-        adfEnv.wFct = (void(*)(char*))new;
+        adfEnv.wFct = (void(*)(char*))newProp;
         break;
     case PR_EFCT:
-        adfEnv.eFct = (void(*)(char*))new;
+        adfEnv.eFct = (void(*)(char*))newProp;
         break;
     case PR_NOTFCT:
-        adfEnv.notifyFct = (void(*)(SECTNUM,int))new;
+        adfEnv.notifyFct = (void(*)(SECTNUM,int))newProp;
         break;
     case PR_USEDIRC:
-        newBool = (BOOL*)new;
+        newBool = (BOOL*)newProp;
 		adfEnv.useDirCache = *newBool;
         break;
     }

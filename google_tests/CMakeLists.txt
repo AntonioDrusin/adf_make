@@ -12,6 +12,9 @@ FetchContent_Declare(
         DOWNLOAD_EXTRACT_TIMESTAMP TRUE
 )
 
+file(GLOB LIB_SOURCES ${CMAKE_SOURCE_DIR}/adflib/Lib/*.*)
+file(GLOB WIN_SOURCES ${CMAKE_SOURCE_DIR}/adflib/Lib/Win32/*.*)
+
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
@@ -19,8 +22,15 @@ add_executable(
         adf_tests
         arguments_tests.cc
         filelist_tests.cc
+        make_adf_tests.cc
+        adf_tests.cc
+        mock_adf_lib.cc
         ../arguments.c
         ../list_files.c
+        ../make_adf.c
+        ../adf_lib.c
+        ${LIB_SOURCES}
+        ${WIN_SOURCES}
 )
 target_link_libraries(
         adf_tests

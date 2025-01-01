@@ -72,7 +72,46 @@ TEST(ParseArgumentsTest, AllRequiredArguments_AreReturned) {
     const Arguments* args = getArguments( std::ssize(argv), argv);
 
     EXPECT_FALSE(args->error);
-    EXPECT_EQ("some.adf", args->dst_adf);
-    EXPECT_EQ("c:\\source", args->src_folder);
+    EXPECT_STREQ("some.adf", args->dst_adf);
+    EXPECT_STREQ("c:\\source", args->src_folder);
     freeArguments(args);
 }
+
+TEST(ParseArgumentsTest, AllArguments_AreReturned) {
+    const char *argv[] = {"program", "-s", "c:\\source", "-d", "some.adf", "-l", "Label"};
+    const Arguments* args = getArguments( std::ssize(argv), argv);
+
+    EXPECT_FALSE(args->error);
+    EXPECT_STREQ("some.adf", args->dst_adf);
+    EXPECT_STREQ("c:\\source", args->src_folder);
+    EXPECT_STREQ("Label", args->label);
+    freeArguments(args);
+}
+
+TEST(ParseArgumentsTest, WhenLabelMissing_ErrorsOut) {
+    const char *argv[] = {"program", "-l", "-s", "some source", "-d", "dest.adf" };
+    const Arguments* args = getArguments( std::ssize(argv), argv);
+
+    EXPECT_TRUE(args->error);
+    EXPECT_THAT(args->error_message, testing::HasSubstr("-l requires"));
+    freeArguments(args);
+}
+
+TEST(ParseArgumentsTest, WhenLabelSet_IsReturned) {
+    const char *argv[] = {"program", "-s", "some source", "-l", "New Label", "-d", "dest.adf"};
+    const Arguments* args = getArguments( std::ssize(argv), argv);
+
+    EXPECT_FALSE(args->error);
+    EXPECT_STREQ("New Label", args->label);
+    freeArguments(args);
+}
+
+TEST(ParseArgumentsTest, WhenLabelNotSet_DefaultIsReturned) {
+    const char *argv[] = {"program", "-s", "some source", "-d", "dest.adf"};
+    const Arguments* args = getArguments( std::ssize(argv), argv);
+
+    EXPECT_FALSE(args->error);
+    EXPECT_STREQ("empty", args->label);
+    freeArguments(args);
+}
+

@@ -38,7 +38,7 @@ PREFIX struct List* adfGetRDirEnt(struct Volume* vol, SECTNUM nSect, BOOL recurs
 PREFIX void printEntry(struct Entry* entry);
 PREFIX void adfFreeDirList(struct List* list);
 PREFIX void adfFreeEntry(struct Entry *);
-PREFIX RETCODE adfRenameEntry(struct Volume *vol, SECTNUM, char *old,SECTNUM,char *new);
+PREFIX RETCODE adfRenameEntry(struct Volume *vol, SECTNUM, char *old,SECTNUM,char *newName);
 PREFIX RETCODE adfSetEntryAccess(struct Volume*, SECTNUM, char*, long);
 PREFIX RETCODE adfSetEntryComment(struct Volume*, SECTNUM, char*, char*);
 
@@ -71,7 +71,7 @@ PREFIX struct Device* adfCreateDumpDevice(char* filename, long cyl, long heads, 
 /* env */
 PREFIX void adfEnvInitDefault();
 PREFIX void adfEnvCleanUp();
-PREFIX void adfChgEnvProp(int prop, void *new);
+PREFIX void adfChgEnvProp(int prop, void *newProp);
 PREFIX char* adfGetVersionNumber();
 PREFIX char* adfGetVersionDate();
 /* obsolete */

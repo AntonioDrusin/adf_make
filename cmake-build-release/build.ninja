@@ -217,8 +217,8 @@ build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 build cmake_object_order_depends_target_adf_make: phony || .
 
-build CMakeFiles/adf_make.dir/main.c.obj: C_COMPILER__adf_make_unscanned_Release D$:/dev/Amiga/adf-make/main.c || cmake_object_order_depends_target_adf_make
-  DEP_FILE = CMakeFiles\adf_make.dir\main.c.obj.d
+build CMakeFiles/adf_make.dir/adf_lib.c.obj: C_COMPILER__adf_make_unscanned_Release D$:/dev/Amiga/adf-make/adf_lib.c || cmake_object_order_depends_target_adf_make
+  DEP_FILE = CMakeFiles\adf_make.dir\adf_lib.c.obj.d
   FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
   INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32
   OBJECT_DIR = CMakeFiles\adf_make.dir
@@ -233,6 +233,20 @@ build CMakeFiles/adf_make.dir/arguments.c.obj: C_COMPILER__adf_make_unscanned_Re
 
 build CMakeFiles/adf_make.dir/list_files.c.obj: C_COMPILER__adf_make_unscanned_Release D$:/dev/Amiga/adf-make/list_files.c || cmake_object_order_depends_target_adf_make
   DEP_FILE = CMakeFiles\adf_make.dir\list_files.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32
+  OBJECT_DIR = CMakeFiles\adf_make.dir
+  OBJECT_FILE_DIR = CMakeFiles\adf_make.dir
+
+build CMakeFiles/adf_make.dir/main.c.obj: C_COMPILER__adf_make_unscanned_Release D$:/dev/Amiga/adf-make/main.c || cmake_object_order_depends_target_adf_make
+  DEP_FILE = CMakeFiles\adf_make.dir\main.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32
+  OBJECT_DIR = CMakeFiles\adf_make.dir
+  OBJECT_FILE_DIR = CMakeFiles\adf_make.dir
+
+build CMakeFiles/adf_make.dir/make_adf.c.obj: C_COMPILER__adf_make_unscanned_Release D$:/dev/Amiga/adf-make/make_adf.c || cmake_object_order_depends_target_adf_make
+  DEP_FILE = CMakeFiles\adf_make.dir\make_adf.c.obj.d
   FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
   INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32
   OBJECT_DIR = CMakeFiles\adf_make.dir
@@ -337,7 +351,7 @@ build CMakeFiles/adf_make.dir/adflib/Lib/Win32/nt4_dev.c.obj: C_COMPILER__adf_ma
 #############################################
 # Link the executable adf_make.exe
 
-build adf_make.exe: C_EXECUTABLE_LINKER__adf_make_Release CMakeFiles/adf_make.dir/main.c.obj CMakeFiles/adf_make.dir/arguments.c.obj CMakeFiles/adf_make.dir/list_files.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_bitm.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_cache.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_dir.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_disk.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_dump.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_env.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_file.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_hd.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_link.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_raw.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_util.c.obj CMakeFiles/adf_make.dir/adflib/Lib/Win32/adf_nativ.c.obj CMakeFiles/adf_make.dir/adflib/Lib/Win32/nt4_dev.c.obj
+build adf_make.exe: C_EXECUTABLE_LINKER__adf_make_Release CMakeFiles/adf_make.dir/adf_lib.c.obj CMakeFiles/adf_make.dir/arguments.c.obj CMakeFiles/adf_make.dir/list_files.c.obj CMakeFiles/adf_make.dir/main.c.obj CMakeFiles/adf_make.dir/make_adf.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_bitm.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_cache.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_dir.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_disk.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_dump.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_env.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_file.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_hd.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_link.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_raw.c.obj CMakeFiles/adf_make.dir/adflib/Lib/adf_util.c.obj CMakeFiles/adf_make.dir/adflib/Lib/Win32/adf_nativ.c.obj CMakeFiles/adf_make.dir/adflib/Lib/Win32/nt4_dev.c.obj
   FLAGS = -O3 -DNDEBUG
   LINK_FLAGS = -Wl,--gc-sections
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -677,6 +691,27 @@ build google_tests/CMakeFiles/adf_tests.dir/filelist_tests.cc.obj: CXX_COMPILER_
   OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
   OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir
 
+build google_tests/CMakeFiles/adf_tests.dir/make_adf_tests.cc.obj: CXX_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/google_tests/make_adf_tests.cc || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\make_adf_tests.cc.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir
+
+build google_tests/CMakeFiles/adf_tests.dir/adf_tests.cc.obj: CXX_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/google_tests/adf_tests.cc || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\adf_tests.cc.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir
+
+build google_tests/CMakeFiles/adf_tests.dir/mock_adf_lib.cc.obj: CXX_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/google_tests/mock_adf_lib.cc || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\mock_adf_lib.cc.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir
+
 build google_tests/CMakeFiles/adf_tests.dir/__/arguments.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/arguments.c || cmake_object_order_depends_target_adf_tests
   DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\arguments.c.obj.d
   FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
@@ -691,6 +726,111 @@ build google_tests/CMakeFiles/adf_tests.dir/__/list_files.c.obj: C_COMPILER__adf
   OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
   OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__
 
+build google_tests/CMakeFiles/adf_tests.dir/__/make_adf.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/make_adf.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\make_adf.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adf_lib.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adf_lib.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adf_lib.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_bitm.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_bitm.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_bitm.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_cache.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_cache.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_cache.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_dir.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_dir.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_dir.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_disk.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_disk.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_disk.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_dump.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_dump.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_dump.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_env.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_env.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_env.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_file.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_file.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_file.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_hd.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_hd.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_hd.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_link.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_link.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_link.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_raw.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_raw.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_raw.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_util.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/adf_util.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\adf_util.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/Win32/adf_nativ.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/Win32/adf_nativ.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\Win32\adf_nativ.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\Win32
+
+build google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/Win32/nt4_dev.c.obj: C_COMPILER__adf_tests_unscanned_Release D$:/dev/Amiga/adf-make/adflib/Lib/Win32/nt4_dev.c || cmake_object_order_depends_target_adf_tests
+  DEP_FILE = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\Win32\nt4_dev.c.obj.d
+  FLAGS = -O3 -DNDEBUG -fdiagnostics-color=always
+  INCLUDES = -ID:/dev/Amiga/adf-make/adflib/Lib/Win32 -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock/include -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googletest -isystem D:/dev/Amiga/adf-make/cmake-build-release/_deps/googletest-src/googlemock
+  OBJECT_DIR = google_tests\CMakeFiles\adf_tests.dir
+  OBJECT_FILE_DIR = google_tests\CMakeFiles\adf_tests.dir\__\adflib\Lib\Win32
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target adf_tests
@@ -699,7 +839,7 @@ build google_tests/CMakeFiles/adf_tests.dir/__/list_files.c.obj: C_COMPILER__adf
 #############################################
 # Link the executable google_tests\adf_tests.exe
 
-build google_tests/adf_tests.exe google_tests/adf_tests[1]_tests.cmake | ${cmake_ninja_workdir}google_tests/adf_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__adf_tests_Release google_tests/CMakeFiles/adf_tests.dir/arguments_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/filelist_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/__/arguments.c.obj google_tests/CMakeFiles/adf_tests.dir/__/list_files.c.obj | lib/libgtest_main.a lib/libgmock.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a lib/libgtest_main.a
+build google_tests/adf_tests.exe google_tests/adf_tests[1]_tests.cmake | ${cmake_ninja_workdir}google_tests/adf_tests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__adf_tests_Release google_tests/CMakeFiles/adf_tests.dir/arguments_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/filelist_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/make_adf_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/adf_tests.cc.obj google_tests/CMakeFiles/adf_tests.dir/mock_adf_lib.cc.obj google_tests/CMakeFiles/adf_tests.dir/__/arguments.c.obj google_tests/CMakeFiles/adf_tests.dir/__/list_files.c.obj google_tests/CMakeFiles/adf_tests.dir/__/make_adf.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adf_lib.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_bitm.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_cache.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_dir.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_disk.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_dump.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_env.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_file.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_hd.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_link.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_raw.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/adf_util.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/Win32/adf_nativ.c.obj google_tests/CMakeFiles/adf_tests.dir/__/adflib/Lib/Win32/nt4_dev.c.obj | lib/libgtest_main.a lib/libgmock.a lib/libgtest.a || lib/libgmock.a lib/libgtest.a lib/libgtest_main.a
   FLAGS = -O3 -DNDEBUG
   LINK_FLAGS = -Wl,--gc-sections
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgmock.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

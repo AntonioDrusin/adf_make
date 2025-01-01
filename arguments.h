@@ -3,6 +3,7 @@
 
 struct Arguments {
     bool error;
+    const char *label;
     const char *error_message;
     const char *dst_adf;
     const char *src_folder;

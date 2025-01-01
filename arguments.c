@@ -9,6 +9,8 @@ void printHelp() {
                  "                        Excludes specific folder and file patterns from the adf.\n"
                  "                        This can be a file name or a relative path, for example \"images/pic.info\" .\n"
                  "\n"
+                 "  -l <label>            Volume label. Defaults to \"empty\"\n"
+                 "\n"
                  "  -d <dst filename>     Required. Name of the destination adf.\n"
                  "\n"
                  "  -s <src folder>       Required. Source folder to be copied into the destination adf.\n"
@@ -33,11 +35,10 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    args->error = 0;
     args->dst_adf = NULL;
     args->src_folder = NULL;
     args->error_message = NULL;
-
+    args->label = NULL;
     args->error = true;
 
     // Initialize c_values
@@ -46,7 +47,18 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
     // DRY in the for loop will also DRY the unit tests. But that is a future refactor.
 
     for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "-d") == 0) {
+        if (strcmp(argv[i], "-l") == 0) {
+            if (i + 1 < argc && argv[i+1][0] != '-') {
+                if (args->label) {
+                    args->error_message = "Error: -l can only appear once.\n";
+                    return args;
+                }
+                args->label = argv[++i];
+            } else {
+                args->error_message = "Error: -l requires an argument <label>\n";
+                return args;
+            }
+        } else if (strcmp(argv[i], "-d") == 0) {
             if (i + 1 < argc && argv[i+1][0] != '-') {
                 if (args->dst_adf) {
                     args->error_message = "Error: -d can only appear once.\n";
@@ -84,7 +96,7 @@ const struct Arguments *getArguments(const int argc, const char *argv[]) {
         return args;
     }
 
-
+    if ( !args->label ) args->label = "empty";
     args->error = false;
 
     return args;

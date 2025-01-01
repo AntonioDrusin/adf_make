@@ -7,7 +7,7 @@
 
 namespace fs = std::filesystem;
 
-void setup_test_directory(std::string& base_path) {
+static void setupDirectory(std::string& base_path) {
     base_path = (std::filesystem::temp_directory_path() / "test_dir").string();
     // Create test directory structure
     fs::create_directories(base_path + "/subdir1");
@@ -19,14 +19,14 @@ void setup_test_directory(std::string& base_path) {
     std::ofstream(base_path + "/subdir2/file4.txt").close();
 }
 
-void setup_empty_test_directory(std::string& base_path) {
+static void setup_empty_test_directory(std::string& base_path) {
     base_path = (std::filesystem::temp_directory_path() / "test_dir_empty").string();
     // Create test directory structure
     fs::create_directories(base_path + "/subdir1");
     fs::create_directories(base_path + "/subdir2");
 }
 
-void cleanup_test_directory(const std::string& base_path) {
+static void cleanupDirectory(const std::string& base_path) {
     fs::remove_all(base_path); // Remove all files and directories
 }
 
@@ -43,7 +43,7 @@ TEST(FileSystemTest, WhenFolderContainsFilesAndSubfolders_TraversesDirectoryCorr
     int fileCount;
 
     // Setup test environment
-    setup_test_directory(test_dir);
+    setupDirectory(test_dir);
 
     // Call your function to get the list of files
     FileList *list = getFileList(test_dir.c_str());
@@ -60,7 +60,7 @@ TEST(FileSystemTest, WhenFolderContainsFilesAndSubfolders_TraversesDirectoryCorr
     ));
 
     // Cleanup test environment
-    cleanup_test_directory(test_dir);
+    cleanupDirectory(test_dir);
     freeFileList(list);
 }
 
@@ -81,6 +81,6 @@ TEST(FileSystemTest, WhenFolderIsEmpty_ReturnsEmptyList) {
     EXPECT_THAT(file_list, ::testing::UnorderedElementsAre(    ));
 
     // Cleanup test environment
-    cleanup_test_directory(test_dir);
+    cleanupDirectory(test_dir);
     freeFileList(list);
 }
